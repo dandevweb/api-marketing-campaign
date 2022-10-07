@@ -10,4 +10,5 @@ class ProductCampaign extends Model
     use HasFactory;
 
     protected $fillable = ['product_id', 'campaign_id'];
+    public $timestamps = false;
 }
