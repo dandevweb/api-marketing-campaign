@@ -4,13 +4,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\CampaignController;
 use App\Http\Controllers\CityController;
+use App\Http\Controllers\DiscountController;
 use App\Http\Controllers\GroupController;
 
 /**Auth Routes */
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
 
-/**Protected Routes */
+/**JWT Token protected Routes */
 Route::middleware('auth:api')->group(function () {
 
     Route::get('campaigns/paginate/{perPage?}', [CampaignController::class, 'paginate']);
@@ -21,4 +22,7 @@ Route::middleware('auth:api')->group(function () {
 
     Route::get('cities/paginate/{perPage?}', [CityController::class, 'paginate']);
     Route::apiResource('cities', CityController::class);
+
+    Route::get('discounts/paginate/{perPage?}', [DiscountController::class, 'paginate']);
+    Route::apiResource('discounts', DiscountController::class);
 });
