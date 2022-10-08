@@ -9,7 +9,7 @@ class Group extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['campaign_id', 'name'];
+    protected $fillable = ['campaign_id', 'name', 'active'];
 
     public function cities()
     {
@@ -18,6 +18,6 @@ class Group extends Model
 
     public function campaign()
     {
-        return $this->hasOne(Campaign::class);
+        return $this->belongsTo(Campaign::class);
     }
 }
