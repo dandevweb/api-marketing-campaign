@@ -15,8 +15,7 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('discount_id')->nullable()->constrained();
-            $table->string('name');
+            $table->string('name')->unique();
             $table->decimal('price');
             $table->timestamps();
         });

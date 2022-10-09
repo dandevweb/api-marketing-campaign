@@ -17,8 +17,8 @@ class DiscountFactory extends Factory
     public function definition()
     {
         return [
-            'name' => 'Desconto ' . fake()->firstName(),
-            'value' => fake()->numberBetween(0, 99),
+            'name' => 'Desconto ' . fake()->unique()->firstName(),
+            'value' => fake()->numberBetween(0, 50),
         ];
     }
 }

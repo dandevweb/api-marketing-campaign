@@ -17,7 +17,7 @@ class CampaignFactory extends Factory
     public function definition()
     {
         return [
-            'name' => 'Campanha '. fake()->firstName()
+            'name' =>  'Campanha '. fake()->unique()->firstName()
         ];
     }
 }

@@ -2,14 +2,14 @@
 
 namespace Database\Factories;
 
-use App\Models\Campaign;
+use App\Models\Discount;
 use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ProductCampaign>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ProductDiscount>
  */
-class ProductCampaignFactory extends Factory
+class ProductDiscountFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -20,7 +20,7 @@ class ProductCampaignFactory extends Factory
     {
         return [
             'product_id' => fake()->randomElement(Product::all()->pluck('id')->toArray()),
-            'campaign_id' => fake()->randomElement(Campaign::all()->pluck('id')->toArray()),
+            'discount_id' => fake()->randomElement(Discount::all()->pluck('id')->toArray()),
         ];
     }
 }

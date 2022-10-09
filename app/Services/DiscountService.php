@@ -14,8 +14,6 @@ class DiscountService
     {
         $discountExists = Discount::whereName($input['name'])->exists();
 
-        $input['active'] = !isset($input['campaign_id']) ? false : true;
-
         return !$discountExists ? Discount::create($input) : throw new DiscountHasBeenTakenException();
     }
 

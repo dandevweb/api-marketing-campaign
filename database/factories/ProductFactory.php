@@ -18,9 +18,8 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
-            'name' => 'Produto ' . fake()->word(),
+            'name' => 'Produto ' . fake()->unique()->word(),
             'price' => fake()->randomFloat(2, 50, 400),
-            'discount_id' => fake()->randomElement(Discount::all()->pluck('id')->toArray()),
         ];
     }
 }

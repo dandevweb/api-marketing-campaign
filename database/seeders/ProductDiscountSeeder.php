@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\ProductCampaign;
+use App\Models\ProductDiscount;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class ProductCampaignSeeder extends Seeder
+class ProductDiscountSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,6 +15,6 @@ class ProductCampaignSeeder extends Seeder
      */
     public function run()
     {
-        ProductCampaign::factory(100)->create();
+        ProductDiscount::factory(100)->create();
     }
 }

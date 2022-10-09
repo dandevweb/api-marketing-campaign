@@ -19,7 +19,7 @@ class CityFactory extends Factory
     {
         return [
             'group_id' => fake()->randomElement(Group::all()->pluck('id')->toArray()),
-            'name' => 'Cidade ' . fake()->city()
+            'name' => 'Cidade ' . fake()->unique()->city()
         ];
     }
 }

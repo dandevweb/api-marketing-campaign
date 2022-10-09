@@ -19,7 +19,7 @@ class GroupFactory extends Factory
     {
         return [
             'campaign_id' => fake()->randomElement(Campaign::all()->pluck('id')->toArray()),
-            'name' => 'Grupo ' . fake()->firstName(),
+            'name' => 'Grupo ' . fake()->unique()->firstName(),
         ];
     }
 }
