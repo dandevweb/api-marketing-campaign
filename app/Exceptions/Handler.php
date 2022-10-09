@@ -72,7 +72,7 @@ class Handler extends ExceptionHandler
                 'message' => $message
             ], 404);
 
-        } elseif ($exception instanceof QueryException) {
+        } elseif ($exception instanceof QueryException && $exception->errorInfo[1] === 1451) {
 
             return response()->json([
                 'error' => 'Integrity constraint violation',

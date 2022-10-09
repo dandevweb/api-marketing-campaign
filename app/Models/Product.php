@@ -9,15 +9,15 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['discount_id','name', 'price'];
+    protected $fillable = ['name', 'price'];
 
-    public function campaigns()
+    public function discounts()
     {
         return $this->belongsToMany(
-            Campaign::class,
-            Campaign::RELATIONSHIP_PRODUCTS_CAMPAIGNS,
-            'campaign_id',
-            'product_id'
+            Discount::class,
+            Discount::RELATIONSHIP_PRODUCTS_DISCOUNTS,
+            'product_id',
+            'discount_id',
         );
     }
 }

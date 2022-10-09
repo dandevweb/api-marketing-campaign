@@ -6,6 +6,7 @@ use App\Http\Controllers\CampaignController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\DiscountController;
 use App\Http\Controllers\GroupController;
+use App\Http\Controllers\ProductController;
 
 /**Auth Routes */
 Route::post('register', [AuthController::class, 'register']);
@@ -25,4 +26,7 @@ Route::middleware('auth:api')->group(function () {
 
     Route::get('discounts/paginate/{perPage?}', [DiscountController::class, 'paginate']);
     Route::apiResource('discounts', DiscountController::class);
+
+    Route::get('products/paginate/{perPage?}', [ProductController::class, 'paginate']);
+    Route::apiResource('products', ProductController::class);
 });
